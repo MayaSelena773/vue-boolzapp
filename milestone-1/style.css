@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+/*COMMON*/
+.flex {
+    display: flex;
+}
+
+p {
+    margin-left: 15px ;
+}
+
+/*sfondo app*/
 .background {
     background-color: lightpink;
     width: 100%;
@@ -19,6 +29,7 @@
     background-color: lightgreen;
 }
 
+/*app cotainer*/
 .app-container {
     width: 80%;
     height: 90%;
@@ -27,3 +38,36 @@
     right: 130px;
     bottom: 30px;
 }
+
+/*barra laterale contatti*/
+.side-nav {
+    background-color: lightslategray;
+    width: 400px;
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+}
+
+.banner {
+    background-color: antiquewhite;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.little-img {
+    width: 40px;
+}
+
+.notification-bar {
+    background-color: aquamarine;
+}
+
+.search {
+    padding: 10px;
+}
+    
+    
