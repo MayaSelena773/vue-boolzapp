@@ -76,25 +76,15 @@
                     <div class="contact-list">
 
                         <!--template da popolare con v-for-->
-                        <div class="single-contact flex active">
+                        <div v-for="contact in contacts" class="single-contact">
 
-                            <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
-                            <p>name</p>
+                            <div class="flex">
 
-                        </div>
+                                <img :src="`/img/avatar` + contact.avatar + `.jpg`" alt="{{contact.name}}" class="big-img">
+                                <div>{{contact.name}}</div>
 
-                        <div class="single-contact flex">
-
-                            <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
-                            <p>name</p>
-
-                        </div>
-
-                        <div class="single-contact flex">
-
-                            <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
-                            <p>name</p>
-
+                            </div>
+                            
                         </div>
                        
                     </div>
@@ -167,7 +157,7 @@
                         <input type="text" placeholder="Scrivi un messaggio">
 
                         <i class="fa-solid fa-microphone"></i>
-                        
+
                     </div>
 
                 </div>

@@ -201,6 +201,17 @@ p {
 /*Area scrittura messaggi*/
 .write-msg {
     background-color:rgb(241, 236, 231) ;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.write-msg input {
+    width: 90%;
+    height: 30px;
+    border: 0;
 }
     
     
