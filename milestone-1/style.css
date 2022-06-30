@@ -138,22 +138,69 @@ p {
     background-color: lightskyblue;
     width: 65%;
     height: 100%;
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
 }
 
 .contact-list {
     padding: 10px 10px;
+    overflow-y: auto;
 }
 
 .single-contact {
     background-color: white;
     border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
 }
 
-/*.single-contact:last-child {
-    border-bottom:0;
-}*/
+.single-contact.active {
+    background-color: lightgray;
+}
+
+.single-contact:last-child {
+    border-bottom: 0;
+}
+
+/*Area messaggi*/
+.messages-area {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.single-msg {
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem;
+    max-width: 55%;
+    min-width: 25%;
+    position: relative;
+}
+
+.received {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.sent {
+    background-color: lightgreen;
+    align-self: flex-end;
+}
+
+.msg-date {
+    font-size: 10px;
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+}
+
+/*Area scrittura messaggi*/
+.write-msg {
+    background-color:rgb(241, 236, 231) ;
+}
     
     

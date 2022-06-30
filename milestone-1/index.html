@@ -76,7 +76,7 @@
                     <div class="contact-list">
 
                         <!--template da popolare con v-for-->
-                        <div class="single-contact flex">
+                        <div class="single-contact flex active">
 
                             <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
                             <p>name</p>
@@ -102,7 +102,7 @@
                 </div>
 
                 <!--contenitore messaggi visualizzati-->
-                <div class="msg-container">
+                <div class="msg-container flex">
 
                     <!--banner contatto-->
                     <div class="banner">
@@ -128,8 +128,47 @@
 
                     </div>
 
-                    <!--sezione messaggi-->
+                    <!--area messaggi-->
+                    <div class="messages-area">
+                        
+                        <div class="single-msg received">
+
+                            <p>Ciao sono un messssaaaaaggioooo</p>
+
+                            <div class="msg-date">10/01/2020 15:30:55</div>
+
+                        </div>
+
+                        <div class="single-msg sent">
+
+                            <p>
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                                Ciao sono un messssaaaaaggioooo
+                            </p> 
+
+                            <div class="msg-date">10/01/2020 15:30:55</div>
+
+                        </div>
+
+                    </div>
+
                     <!--barra scrittura msg-->
+                    <div class="write-msg">
+                        
+                        <i class="fa-regular fa-face-smile"></i>
+
+                        <input type="text" placeholder="Scrivi un messaggio">
+
+                        <i class="fa-solid fa-microphone"></i>
+                        
+                    </div>
 
                 </div>
 
