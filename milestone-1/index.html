@@ -8,18 +8,19 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
     <!--Sfondo-->
-    <section class="background">
+    <section id="root" class="background">
 
         <div class="green-strip"></div>
 
         <main>
 
             <!--App-container-->
-            <div class="app-container">
+            <div class="app-container flex">
 
                 <!--barra laterale contatti-->
                 <div class="side-nav">
@@ -27,47 +28,75 @@
                     <!--banner account-->
                     <div class="banner">
 
-                        <div class="flex">
+                        <div class="flex-center">
 
                             <img src="/img/avatar_io.jpg" alt="myaccount" class="little-img">
                             
-                            <p>nome</p>
+                            <p>Nome Utente</p>
 
                         </div>
                         
-                        <div>icone</div>
+                        <div class="user-action">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
                     </div>
 
                     <!--barra notifiche-->
-                    <div class="notification-bar flex">
+                    <div class="notification-bar flex-center">
 
-                        icona
+                        <div class="bell-icon"> 
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
 
                         <div>
 
-                            <p>lorem ipsum dolor</p>
-                            <p>lorem ipsum dolor</p>
-
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            
+                            <a href="#" class="small-text tag-not">Attiva notifiche desktop</a>
+                            
                         </div>
-                        
-
+                    
                     </div>
 
-                    <!--search-->
-                    <div class="search">
+                    <!--search area-->
+                    <div class="search flex">
 
-                        <button>search</button>
+                        <label for="contacts-search" class="back-white">
+                            <i class="fa-solid fa-magnifying-glass user-action padd"></i>
+                        </label>
+
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
 
                     </div>
 
                     <!--lista account-->
-                    <div class="account-list flex">
+                    <div class="contact-list">
 
                         <!--template da popolare con v-for-->
-                        <img src="/img/avatar_1.jpg" alt="avatar1" class="little-img">
-                        <p>name</p>
+                        <div class="single-contact flex">
 
+                            <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
+                            <p>name</p>
+
+                        </div>
+
+                        <div class="single-contact flex">
+
+                            <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
+                            <p>name</p>
+
+                        </div>
+
+                        <div class="single-contact flex">
+
+                            <img src="/img/avatar_1.jpg" alt="avatar1" class="big-img">
+                            <p>name</p>
+
+                        </div>
+                       
                     </div>
 
                 </div>
@@ -76,6 +105,29 @@
                 <div class="msg-container">
 
                     <!--banner contatto-->
+                    <div class="banner">
+
+                        <div class="user-info flex-center">
+
+                            <img src="/img/avatar_io.jpg" alt="myaccount" class="little-img">
+                            
+                            <div>
+
+                                <p>Nome Utente</p>
+                                <p class="small-text">Ultimo accesso oggi alle</p>
+
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="user-action">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+
                     <!--sezione messaggi-->
                     <!--barra scrittura msg-->
 

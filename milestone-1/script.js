@@ -7,6 +7,8 @@
 
 //Contatti suggeriti
 
+
+
 contacts: [
 	{
 		name: 'Michele',
