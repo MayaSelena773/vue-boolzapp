@@ -105,19 +105,39 @@ var app = new Vue (
 				this.currentActiveContact = contactIndex;
 			},
 			addNewMessage() {
-				//push del nuovo msg nell'array dei msg del contatto selezionato
-				const newMessage = {
-					date: '10/01/2020 15:50:00',
-					text: this.newWrittenMsg,
-					status: 'sent'
-				};
 
-				this.contacts[this.currentActiveContact].messages.push(newMessage);
+				if(this.newWrittenMsg.length > 0) {
 
+
+				 //push del nuovo messaggio 
+				 //nell'array dei messaggi del contatto selezionato
+				 //con data e ora attuali 
+				 const newMessage = {
+					 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+					 text: this.newWrittenMsg,
+					 status: 'sent'
+				 };
+
+				 this.contacts[this.currentActiveContact].messages.push(newMessage);
+
+				 //dopo svuoto la input
+				 this.newWrittenMsg = '';
+
+				 //risposta del contatto dopo un secondo dal nuovo messaggio
+				 setTimeout(() => {
+
+					 const newReply = {
+						 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+						 text: 'ok',
+						 status: 'received'
+					 };
+
+					 this.contacts[this.currentActiveContact].messages.push(newReply);
+
+				 }, 1000);
+
+				}
 			}
 		}
 	}
 	);
-
-	//data e ora attuali per i msg
-	//dayjs().format(DD-MM-YYYY)
