@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolzapp</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <!--Sfondo-->
+    <section id="root" class="background">
+
+        <div class="green-strip"></div>
+
+        <main>
+
+            <!--APP CONTAINER-->
+            <div class="app-container flex">
+
+                <!--SIDE COLUMN-->
+                <div class="side-nav">
+
+                    <!--banner account-->
+                    <div class="banner">
+
+                        <div class="flex-center">
+
+                            <img src="/img/avatar_io.jpg" alt="myaccount" class="little-img">
+                            
+                            <p>Nome Utente</p>
+
+                        </div>
+                        
+                        <div class="user-action">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+
+                    <!--barra notifiche-->
+                    <div class="notification-bar flex-center">
+
+                        <div class="bell-icon"> 
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+
+                        <div>
+
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            
+                            <a href="#" class="small-text tag-not">Attiva notifiche desktop</a>
+                            
+                        </div>
+                    
+                    </div>
+
+                    <!--search area-->
+                    <div class="search flex">
+
+                        <label for="contacts-search" class="back-white">
+                            <i class="fa-solid fa-magnifying-glass user-action padd"></i>
+                        </label>
+
+                        <input 
+                        v-model="contactsFilterText" 
+                        @keyup="filterContacts()" 
+                        type="text" 
+                        placeholder="Cerca o inizia una nuova chat">
+
+                    </div>
+
+                    <!--lista account-->
+                    <div class="contact-list">
+
+                        <!--template da popolare con v-for-->
+                        <div 
+                             v-for="contact, index in contacts" 
+                             v-if="contact.visible"
+                             class="single-contact" 
+                             :class="{'active': index === currentActiveContact}"
+                             @click="setActiveContact(index)"
+                             >
+
+                            <div class="flex">
+
+                                <img :src="`/img/avatar` + contact.avatar + `.jpg`" :alt="contact.name" class="big-img">
+                                <div>{{contact.name}}</div>
+
+                            </div>
+                            
+                        </div>
+                       
+                    </div>
+
+                </div>
+
+                <!--MESSAGGI VISUALIZZATI-->
+                <div class="msg-container flex">
+
+                    <!--banner contatto-->
+                    <div class="banner">
+
+                        <div class="user-info flex-center">
+
+                            <img :src="`/img/avatar` + contacts[currentActiveContact].avatar + `.jpg`" alt="myaccount" class="little-img">
+                            
+                            <div>
+
+                                <p>{{contacts[currentActiveContact].name}}</p>
+                                <p class="small-text">Ultimo accesso oggi alle</p>
+
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="user-action">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+
+                    <!--area messaggi-->
+                    <div class="messages-area">
+                        
+                        <div v-for="message in contacts[currentActiveContact].messages" class="single-msg" :class="message.status">
+
+                            <p>{{message.text}}</p>
+
+                            <div class="msg-date">{{message.date}}</div>
+
+                        </div>
+
+                    </div>
+
+                    <!--barra scrittura msg-->
+                    <div class="write-msg">
+                        
+                        <i class="fa-regular fa-face-smile"></i>
+
+                        <input 
+                        v-model="newWrittenMsg" 
+                        type="text" 
+                        placeholder="Scrivi un messaggio"
+                        @keyup.enter="addNewMessage()"
+                        >
+
+                        <i class="fa-solid fa-microphone"></i>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </main>
+       
+
+    </section>
+    
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
