@@ -109,32 +109,32 @@ var app = new Vue (
 				if(this.newWrittenMsg.length > 0) {
 
 
-				 //push del nuovo messaggio 
-				 //nell'array dei messaggi del contatto selezionato
-				 //con data e ora attuali 
-				 const newMessage = {
-					 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-					 text: this.newWrittenMsg,
-					 status: 'sent'
-				 };
+				  //push del nuovo messaggio 
+				  //nell'array dei messaggi del contatto selezionato
+				  //con data e ora attuali 
+				  const newMessage = {
+					  date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+					  text: this.newWrittenMsg,
+					  status: 'sent'
+				  };
 
 				 this.contacts[this.currentActiveContact].messages.push(newMessage);
 
-				 //dopo svuoto la input
-				 this.newWrittenMsg = '';
+				  //dopo svuoto la input
+				  this.newWrittenMsg = '';
 
 				 //risposta del contatto dopo un secondo dal nuovo messaggio
-				 setTimeout(() => {
+				  setTimeout(() => {
 
-					 const newReply = {
-						 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-						 text: 'ok',
-						 status: 'received'
-					 };
+					  const newReply = {
+						  date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+						  text: 'ok',
+						  status: 'received'
+					  };
 
-					 this.contacts[this.currentActiveContact].messages.push(newReply);
+					  this.contacts[this.currentActiveContact].messages.push(newReply);
 
-				 }, 1000);
+				  }, 1000);
 
 				}
 			},
@@ -144,7 +144,7 @@ var app = new Vue (
 			filterContacts() {
 				const filterTextLower = this.contactsFilterText.toLowerCase();
 
-				this.contacts.forEach((elements) => {
+				this.contacts.forEach((element) => {
 
 					const contactNameLower = element.name.toLowerCase();
 
@@ -154,9 +154,10 @@ var app = new Vue (
 					}else {
 						element.visible = false;
 					}
-				})
+				}
+				)
 
-			}
+			},
 		}
 	}
 	);
